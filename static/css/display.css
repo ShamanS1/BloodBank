@@ -1,0 +1,78 @@
+body{
+    background-image: url(/static/images/formbg.jpg);
+    
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #292b2c;
+}
+h1{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 30px;
+    color: #292b2c;
+    text-align: center;
+    text-shadow: #292b2c 0px 1px 0px;
+}
+#navb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #880d1e;
+    color: white;
+}
+
+#navs {
+    margin-left: auto; /* This pushes the "Home" link to the right */
+    text-decoration: none;
+    color: white;
+    padding-right: 15px ;
+}
+.logo-img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#navb a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 300;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.blood-bank-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+.blood-bank-table th,
+.blood-bank-table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: large;
+    font-weight: bolder;
+}
+
+.blood-bank-table th {
+    background-color: #f2f2f2;
+}
+
+
+#logo {
+    font-size: 25px;
+    font-weight: bolder;
+    font-style: roman;
+    color: #c32530;
+    text-decoration: none;
+    
+}

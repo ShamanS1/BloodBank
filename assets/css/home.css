@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #381313;
+    font-family: Arial, sans-serif;
+    background-image: url(/static/images/formbg.jpg);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #880d1e;
+    color: white;
+}
+
+.navs {
+    margin-left: auto; /* This pushes the "Home" link to the right */
+    text-decoration: none;
+    color: white;
+    padding-right: 15px ;
+}
+.logo-img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #292b2c;
+}
+
+.content label {
+    display: block;
+    margin-bottom: 5px;
+    color: #292b2c;
+    font-weight: bold;
+}
+
+.content input[type="text"],
+.content input[type="number"],
+.content textarea,
+.content select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.content button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #111010;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.content button[type="submit"]:hover {
+    background-color: #4b4a4a;
+}
+
+
+
+
+
+
+
