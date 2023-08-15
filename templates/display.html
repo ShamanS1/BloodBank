@@ -35,19 +35,17 @@
                 </tr>
             </thead>
             <tbody>
-                {% for donor in donor_datas %}
                 <tr>
-                    <td>{{ donor.fname }}</td>
-                    <td>{{ donor.lname }}</td>
-                    <td>{{ donor.email }}</td>
-                    <td>{{ donor.phone }}</td>
-                    <td>{{ donor.bloodgroup }}</td>
-                    <td>{{ donor.address }}</td>
-                    <td>{{ donor.city }}</td>
-                    <td>{{ donor.state }}</td>
-                    <td>{{ donor.pincode }}</td>
+                    <td>{{ donor_list.fname }}</td>
+                    <td>{{ donor_list.lname }}</td>
+                    <td>{{ donor_list.email }}</td>
+                    <td>{{ donor_list.phone }}</td>
+                    <td>{{ donor_list.bloodgroup }}</td>
+                    <td>{{ donor_list.address }}</td>
+                    <td>{{ donor_list.city }}</td>
+                    <td>{{ donor_list.state }}</td>
+                    <td>{{ donor_list.pincode }}</td>
                 </tr>
-                {% endfor %}
             </tbody>
         </table>
     </div>

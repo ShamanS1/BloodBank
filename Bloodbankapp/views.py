@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 
 # Initialize an empty list to store donor data
 donor_list = []
+def sign(request):
+    return render(request, "sign.html")
 
 def index(request):
     if request.method == 'POST':
@@ -33,7 +35,7 @@ def index(request):
         donor_list.append(donor_data)
 
         # Redirect to the display page after form submission
-        return redirect('display')
+        return render(request,"display.html", {'donor_list': donor_list})
 
     return render(request, "index.html")
 
