@@ -1,8 +1,24 @@
 from django.shortcuts import render, redirect
 
 # Initialize an empty list to store donor data
+user_data = []
 donor_list = []
 def sign(request):
+    if request.method == 'POST':
+        # Get data from the form
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        email = request.POST.get('email')
+
+        # Create a dictionary with the collected data
+        user_data = {
+            'username': username,
+            'password': password,
+            'email': email
+        }
+
+        # Append the donor data dictionary to the list
+        user_data.append(user_data)   
     return render(request, "sign.html")
 
 def index(request):
@@ -33,10 +49,6 @@ def index(request):
 
         # Append the donor data dictionary to the list
         donor_list.append(donor_data)
-
-        # Redirect to the display page after form submission
-        return render(request,"display.html", {'donor_list': donor_list})
-
     return render(request, "index.html")
 
 def display(request):

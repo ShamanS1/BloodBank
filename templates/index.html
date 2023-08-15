@@ -16,7 +16,7 @@
     </div>
     <div class="content-wrapper">
                 
-        <form id="registration-form" method="post" action="display">
+        <form action="display" id="registration-form" method="post" >
             {% csrf_token %}
         <div class="content">
             <h2>Blood Donation Registration</h2>
@@ -74,7 +74,7 @@
             <label for="pincode">Pincode:</label>
             <input type="number" id="pincode" placeholder="Pincode">
             <br>
-            <input type="submit" class="submit" value="Add">
+            <button type="submit">Add</button>
         </div>
     </form>
     </div>
