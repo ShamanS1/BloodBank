@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 # Initialize an empty list to store donor data
 user_data = []
 donor_list = []
-def sign(request):
+def index(request):
     if request.method == 'POST':
         # Get data from the form
         username = request.POST.get('username')
@@ -18,10 +18,11 @@ def sign(request):
         }
 
         # Append the donor data dictionary to the list
-        user_data.append(user_data)   
-    return render(request, "sign.html")
+        user_data.append(user_data) 
+        print(user_data)  
+    return render(request, "index.html")
 
-def index(request):
+def home(request):
     if request.method == 'POST':
         # Get data from the form
         fname = request.POST.get('fname')
@@ -45,12 +46,14 @@ def index(request):
             'city': city,
             'state': state,
             'pincode': pincode
-        }
-
+        }    
+        
         # Append the donor data dictionary to the list
         donor_list.append(donor_data)
-    return render(request, "index.html")
+        print(donor_list)
+    return render(request, "home.html")
 
 def display(request):
+    
     # Pass the donor_list to the template
     return render(request, "display.html", {'donor_list': donor_list})

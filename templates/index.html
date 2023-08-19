@@ -1,83 +1,106 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BloodBank</title>
-    <link  href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">    
-    <link  href="{%static 'css/home.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/sign.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bloodbank</title>
 </head>
 <body>
-    <div class="navbar">
-        <img class="logo-img" src="{% static 'images/logo.png'%}" alt="Logo">
-        <a href="#" id="logo">DropOfLife</a>
-        <a href="{% url 'display' %}" class="navs">Display</a>
-    </div>
-    <div class="content-wrapper">
-                
-        <form action="display" id="registration-form" method="post" >
+    
+ <div class="container">
+    <div class="box">
+        <form action="home" method="post">
             {% csrf_token %}
-        <div class="content">
-            <h2>Blood Donation Registration</h2>
-            <!-- fname -->
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" placeholder="Firstname">
-            <br>
+        <!------------------ Login Box --------------------->
+        <div class="box-login" id="login">
 
-            <!-- lname -->
-            <label for="lname">Last name:</label>
-            <input type="text" id="lname" placeholder="Lastname">
-            <br>
+            <div class="top-header">
+                <h3>Hello, Again</h3>
+                <small>We are happy to have you back.</small>
+            </div>
+            <div class="input-group">
+                <div class="input-field">
+                    <input type="text" class="input-box" id="logEmail" name="email" required>
+                    <label for="logEmail">Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" class="input-box" id="logPassword" name="password" required>
+                    <label for="logPassword">Password</label>
+                     <div class="eye-area">
+                            <div class="eye-box" onclick="myLogPassword()">
+                                <i class="fa-regular fa-eye" id="eye"></i>
+                                <i class="fa-regular fa-eye-slash" id="eye-slash"></i>
+                            </div>
+                     </div>
+                </div>
+                <div class="remember">
+                    <input type="checkbox" id="formCheck" class="check">
+                    <label for="formCheck"> Remember Me</label>
+                </div>
+                <div class="input-field">
+                    <input type="submit" class="input-submit" value="Sign In" onclick="validateRegistrationForm()">
+                </div>
+                <div class="forgot">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
 
-            <!-- phone -->
-            <label for="phone">Phone Number:</label>
-            <input type="number" id="phone" placeholder="Phone No:">
-            <br>
-
-            <!-- email -->
-            <label for="country">Email:</label>
-            <input type="text" id="email" placeholder="Email">
-            <br>
-
-            <!-- address -->
-            <label for="address">Address:</label>
-            <textarea id="address" placeholder="Enter Your Address"></textarea>
-            <br>
-
-            <!-- bloodtype -->
-            <label for="type">Blood Type:</label>
-            <select id="type" name="bloodType">
-                <option value="select">Select Blood type</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-            </select>
-            <br>
-
-            <!-- city -->
-            <label for="city">City:</label>
-            <input type="text" id="city" placeholder="City">
-            <br>
-
-            <!-- state -->
-            <label for="state">State:</label>
-            <input type="text" id="state" placeholder="State">
-            <br>
-
-            <!-- pincode -->
-            <label for="pincode">Pincode:</label>
-            <input type="number" id="pincode" placeholder="Pincode">
-            <br>
-            <button type="submit">Add</button>
         </div>
-    </form>
+
+     <!-- Register -->
+      
+     <div class="box-register" id="register">
+
+        <div class="top-header">
+            <h3>Sign Up, Now</h3>
+            <small>We are happy to have you with us.</small>
+        </div>
+        <div class="input-group">
+            <div class="input-field">
+                <input type="text" class="input-box" id="regUser" name="username" required>
+                <label for="regUser">Username</label>
+            </div>
+            <div class="input-field">
+                <input type="text" class="input-box" id="regEmail" name="email" required>
+                <label for="regEmail">Email address</label>
+            </div>
+            <div class="input-field">
+                <input type="password" class="input-box" id="regPassword" name="password" required>
+                <label for="regPassword">Password</label>
+                 <div class="eye-area">
+                        <div class="eye-box" onclick="myRegPassword()">
+                            <i class="fa-regular fa-eye" id="eye-2"></i>
+                            <i class="fa-regular fa-eye-slash" id="eye-slash-2"></i>
+                        </div>
+                 </div>
+                 <small class="error-message" id="regPasswordError"></small>
+            </div>
+            <div class="remember">
+                <input type="checkbox" id="formCheck-2" class="check">
+                <label for="formCheck-2"> Remember Me</label>
+            </div>
+            <div class="input-field">
+                <input type="submit" class="input-submit" value="Sign In" onclick="validateRegistrationForm()">
+            </div>
+            
+        </div>
+
     </div>
-    <script src="{%static 'js/home.js'%}"></script>
+
+    <!--Switch-->
+      
+    <div class="switch">
+        <a href="#" class="login" onclick="login()">Login</a>
+        <a href="#" class="register" onclick="register()">Register</a>
+        <div class="btn-active" id="btn"></div>
+    </div>
+</form>
+    </div>
+ </div>
+ <script src="{% static 'js/sign.js' %}"></script>
 </body>
 </html>

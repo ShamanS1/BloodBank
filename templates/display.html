@@ -15,7 +15,7 @@
         <div id="navb">
             <img class="logo-img" src="{% static 'images/logo.png' %}" alt="Logo">
             <a href="#" id="logo">DropOfLife</a>
-            <a href="{% url 'index' %}" id="navs">Home</a>
+            <a href="home" id="navs">Home</a>
         </div>
     </div>
     <div>
@@ -35,17 +35,19 @@
                 </tr>
             </thead>
             <tbody>
+                {% for donor in donor_list %}
                 <tr>
-                    <td>{{ donor_list.fname }}</td>
-                    <td>{{ donor_list.lname }}</td>
-                    <td>{{ donor_list.email }}</td>
-                    <td>{{ donor_list.phone }}</td>
-                    <td>{{ donor_list.bloodgroup }}</td>
-                    <td>{{ donor_list.address }}</td>
-                    <td>{{ donor_list.city }}</td>
-                    <td>{{ donor_list.state }}</td>
-                    <td>{{ donor_list.pincode }}</td>
+                    <td>{{ donor.fname }}</td>
+                    <td>{{ donor.lname }}</td>
+                    <td>{{ donor.phone }}</td>
+                    <td>{{ donor.email }}</td>
+                    <td>{{ donor.address }}</td>
+                    <td>{{ donor.blood_type }}</td>
+                    <td>{{ donor.city }}</td>
+                    <td>{{ donor.state }}</td>
+                    <td>{{ donor.pincode }}</td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
