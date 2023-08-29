@@ -8,6 +8,7 @@ class Donor(models.Model):
     email = models.EmailField()
     blood_type = models.CharField(max_length=50)
     address = models.TextField(max_length=50)
+    gender=models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=50)
     pincode = models.CharField(max_length=50)

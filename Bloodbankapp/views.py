@@ -11,11 +11,12 @@ def index(request):
         phoneno = request.POST['phone']
         email = request.POST['email']
         blood_type = request.POST['bloodType']
+        gender=request.POST["gender"]
         address = request.POST['address']
         city = request.POST['city']
         state = request.POST['state']
         pincode = request.POST['pincode']
-        donor=Donor(fname=fname,lname=lname,phone=phoneno,email=email,blood_type=blood_type,address=address,city=city,state=state,pincode=pincode) 
+        donor=Donor(fname=fname,lname=lname,phone=phoneno,email=email,blood_type=blood_type,gender=gender,address=address,city=city,state=state,pincode=pincode) 
         donor.save()
         return redirect('display/')
      else:
