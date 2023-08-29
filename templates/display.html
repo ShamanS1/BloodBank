@@ -11,20 +11,26 @@
     <link href="{% static 'css/display.css' %}" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <div id="navb">
-            <img class="logo-img" src="{% static 'images/logo.png' %}" alt="Logo">
-            <a href="#" id="logo">DropOfLife</a>
-            <a href="home" id="navs">Home</a>
-        </div>
-    </div>
+    <nav class="flex align-center">
+        <p><span>DropOf</span>Life</p>
+        <ul>
+          <li class="big-screens">
+            <a class="texts" href="{% url 'index' %}">HOME</a>
+            <p>Hello,{{user.username}}</p>
+          </li>
+          <li class="small-screens">
+            <i class="fa-solid fa-bars"></i>
+          </li>
+        </ul>
+      </nav>
     <div>
         <h1>Blood Bank Donor List</h1>
         <table class="table table-bordered blood-bank-table" >
             <thead >
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
                     <th>Phone</th>
                     <th>Email Address</th>
                     <th>Address Line</th>
@@ -37,6 +43,7 @@
             <tbody>
                 {% for donor in donor_list %}
                 <tr>
+                    <td>{{ donor.id }}</td>
                     <td>{{ donor.fname }}</td>
                     <td>{{ donor.lname }}</td>
                     <td>{{ donor.phone }}</td>

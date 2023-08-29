@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignupS/Login</title> 
+    <link rel="stylesheet" href="{%static 'css/register.css'%}">
+</head>
+<body>
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form action="register" method="post">
+			{% csrf_token %}
+			<h1>Create Account</h1>
+			<input type="text" name="username" placeholder="Username" />
+			<input type="email" name="email" placeholder="Email" />
+			<input type="password" name="password" placeholder="Password" />
+            <input type="password" name="password2" placeholder="Confirm Password" />
+            {%for msg in messages%}
+            <span>{{msg}}</span>
+            {%endfor%}
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<h1>Hello,Donor!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp" disabled>Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="{%static 'js/register.js'%}"></script>
+</body>
+</html>
