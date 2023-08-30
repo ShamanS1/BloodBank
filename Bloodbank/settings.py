@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': BASE_DIR/'db.sqlite3',
         }
 }
-DATABASES['default']=dj_database_url.parse("postgres://bloodbank_82l8_user:rDslYRJCcfhmZQpvUhIR1lhW4Dku1n6x@dpg-cjngqqthe99c73b5teo0-a/bloodbank_82l8")
+DATABASES['default']=dj_database_url.parse("postgres://bloodbank_82l8_user:rDslYRJCcfhmZQpvUhIR1lhW4Dku1n6x@dpg-cjngqqthe99c73b5teo0-a.oregon-postgres.render.com/bloodbank_82l8")
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

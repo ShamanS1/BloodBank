@@ -1,23 +1,10 @@
-body{
+body {
+    margin: 0;
+    padding: 0;
     background-image: url(/static/images/formbg.jpg);
-    
-    background-size: cover;
-    background-position: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #292b2c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-h1{
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1.5;
-    margin: 0 0 30px;
-    color: #292b2c;
-    text-align: center;
-    text-shadow: #292b2c 0px 1px 0px;
-}
+
 /* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
@@ -114,17 +101,19 @@ nav .btn {
   background-color: #f3765af4;
 }
 
-.login {
+.login,.logout {
   background-color: rgb(0, 0, 0);
   color: #f3765af4;
 }
 
-.login:hover {
+.login:hover,.logout:hover {
   background-color: #fb7e17e7;
   color: white;
   border: 1px solid #070707;
   border-radius: 5px;
 }
+
+
 
 /* NAVIGATION BAR ENDS */
 
@@ -156,25 +145,68 @@ nav .btn {
 
 /* MEDIA QUERIES ENDS*/
 
-.blood-bank-table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    margin-top: 25px;
+.content {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
-.blood-bank-table th,
-.blood-bank-table td {
-    border: 1px solid black;
+.content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #292b2c;
+}
+
+.content label {
+    display: block;
+    margin-bottom: 5px;
+    color: #292b2c;
+    font-weight: bold;
+}
+
+.content input[type="text"],
+.content input[type="number"],
+.content textarea,
+.content select {
+    width: 100%;
     padding: 8px;
-    text-align: left;
-    background-color: rgba(255, 255, 255, 0.9);
-    font-size: large;
-    font-weight: bolder;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
 }
 
-.blood-bank-table th {
-    background-color: #f2f2f2;
+.content button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #111010;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
 }
+
+.content button[type="submit"]:hover {
+    background-color: #4b4a4a;
+}
+
+@media(max-width:800px){
+    nav{
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .container{
+        padding-top: 10px;
+    }
+}
+
+
+
 
 
