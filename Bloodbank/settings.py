@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 import os
 
@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-oc3_vga0w3kuduax-)8o@5^sucn_ip55^p2^*n)^mxj0lnba=5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -78,16 +78,11 @@ WSGI_APPLICATION = 'Bloodbank.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Bloodbank',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+        'ENGINE': 'django.db.backends.dbsqlite3',
+        'NAME': BASE_DIR/'db.sqlite3',
+        }
 }
-
-
+DATABASES['default']=dj_database_url.parse("postgres://bloodbank_82l8_user:rDslYRJCcfhmZQpvUhIR1lhW4Dku1n6x@dpg-cjngqqthe99c73b5teo0-a/bloodbank_82l8")
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
