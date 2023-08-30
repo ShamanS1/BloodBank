@@ -49,7 +49,7 @@ def register(request):
                 user= User.objects.create_user(username=username, password=password, email=email_id)
                 user.save()
                 print('user created')
-                return render(request, "index.html")
+                return render(request, "login.html")
             
         else:
             messages.info(request, 'Password not matching')
