@@ -18,6 +18,7 @@ def index(request):
         pincode = request.POST['pincode']
         donor=Donor(fname=fname,lname=lname,phone=phoneno,email=email,blood_type=blood_type,gender=gender,address=address,city=city,state=state,pincode=pincode) 
         donor.save()
+        print('data saved')
         return redirect('display/')
      else:
         return render(request, "index.html")
