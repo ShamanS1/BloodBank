@@ -104,11 +104,47 @@
             <label for="pincode">Pincode:</label>
             <input type="number" id="pincode" name="pincode" placeholder="Pincode">
             <br>
-            <button type="submit">Add</button>
+            <button type="submit" id="addbtn">Add</button>
         </form>
         </div>
     
     </div>
-   <!--<script src="{%static 'js/home.js'%}"></script>--> 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   <!--<script src="{%static 'js/home.js'%}"></script>-->
+    <script>
+      $(document).ready(function(){
+        $("#addbtn").click(function(){
+          // Check if all form fields are filled
+          if ($("#name").val() && $("#email").val() && $("#phone").val()  && $("#lname").val()  && $("#bloodType").val()  && $("#address").val()  && $("#city").val()  && $("#state").val()  && $("#pincode").val()) {
+            alert("Form Submitted Successfully! See You Soon");
+          } 
+        });
+      });
+      $(document).on('submit','#registration_form',function(e){
+        e.preventDefault();
+
+        $.ajax(
+          {
+            type:'POST',
+            url:'{% url "register" %}',
+            data:{
+              name:$('#name').val(),
+              email:$('#email').val(),
+              phone:$('#phone').val(),
+              bloodType:$('#bloodType').val(),
+              address:$('#address').val(),
+              city:$('#city').val(),
+              state:$('#state').val(),
+              pincode:$('#pincode').val(),
+              csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+              
+            },
+            success:function(){
+              alert("Form Submitted Successfully! See You Soon");
+            }
+          }
+        )
+      })
+    </script>
 </body>
 </html>
