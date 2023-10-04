@@ -21,7 +21,6 @@ pefile==2023.2.7
 platformdirs==3.10.0
 protobuf==3.20.3
 psycopg2==2.9.8
-py2exe==0.13.0.0
 PyMySQL==1.0.3
 pypng==0.20220715.0
 qrcode==7.4.2
